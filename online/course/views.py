@@ -37,7 +37,7 @@ def submit(request, course_id):
                     selected_choice_id=choice_id
                 )
 
-        return redirect('show_result', course_id=course_id, submission_id=last_submission.id)
+        return redirect('show_exam_result', course_id=course_id, submission_id=last_submission.id)
 
     questions = Question.objects.filter(course_id=course_id)
     return render(request, 'exam.html', {'questions': questions})

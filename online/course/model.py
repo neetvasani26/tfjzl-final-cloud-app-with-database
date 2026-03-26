@@ -49,3 +49,16 @@ class Result(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     score = models.IntegerField()
+
+class Instructor(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
+class Learner(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
