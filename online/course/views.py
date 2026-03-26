@@ -6,14 +6,14 @@ from .model import Course, Lesson, Submission, Question, Student
 def home(request):
     return HttpResponse("Home Page")
 
-def courses(request):
-    return HttpResponse("Courses Page")
+def course_details_bootstrap(request):
+    return HttpResponse("course_details_bootstrap Page")
 
 def course_detail(request, id):
     course = Course.objects.get(id=id)
     lessons = Lesson.objects.filter(course=course)
 
-    return render(request, 'courses.html', {
+    return render(request, 'course_details_bootstrap.html', {
         'course': course,
         'lessons': lessons
     })
